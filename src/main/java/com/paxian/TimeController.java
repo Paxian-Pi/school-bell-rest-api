@@ -26,16 +26,23 @@ public class TimeController {
         return timeRepository.findAll();
     }
 
+    @PostMapping("/")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<String> update(@RequestBody TimeData timeData) {
+        this.timeRepository.save(timeData);
+        return new ResponseEntity<>("Data created!", HttpStatus.CREATED);
+    }
+
+    @PutMapping("/")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<String> putData(@RequestBody TimeData timeData) {
+        this.timeRepository.insert(timeData);
+        return new ResponseEntity<>("Data inserted successfully", HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     public Optional<TimeData> getById(@PathVariable("id") String id) {
         return timeRepository.findById(id);
-    }
-
-    @PostMapping("/")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<String> postData(@RequestBody TimeData timeData) {
-        this.timeRepository.save(timeData);
-        return new ResponseEntity<>("Data created!", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
