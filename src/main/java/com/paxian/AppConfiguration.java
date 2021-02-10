@@ -35,7 +35,6 @@ public class AppConfiguration {
                 new Contact("Pax", "http://paxian.solutions.com", "paxian.pi@gmail.com"),
                 "API License",
                 "http://paxian.solution.com",
-                Collections.emptyList()
-        );
+                Collections.emptyList());
     }
 }
