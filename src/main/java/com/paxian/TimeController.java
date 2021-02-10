@@ -21,24 +21,24 @@ public class TimeController {
         this.timeRepository = timeRepository;
     }
 
-    @GetMapping("/timeData")
-    public List<TimeData> get() {
+    @GetMapping("/")
+    public List<TimeData> getAll() {
         return timeRepository.findAll();
     }
 
-    @GetMapping("/timeData/{id}")
+    @GetMapping("/{id}")
     public Optional<TimeData> getById(@PathVariable("id") String id) {
         return timeRepository.findById(id);
     }
 
-    @PostMapping("/timeData")
+    @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<String> post(@RequestBody TimeData timeData) {
+    public ResponseEntity<String> postData(@RequestBody TimeData timeData) {
         this.timeRepository.save(timeData);
         return new ResponseEntity<>("Data created!", HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/timeData/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> delete(@PathVariable("id") TimeData id){
         this.timeRepository.delete(id);
