@@ -28,8 +28,8 @@ public class AppConfiguration {
 
     private ApiInfo apiDetails() {
         return new ApiInfo(
-                "School bell API",
-                "Spring rest-api project for school bell",
+                "REST API for CRUD Operations",
+                "Spring project with MongoDB - Atlas",
                 "1.0",
                 "Free to use",
                 new Contact("Pax", "http://paxian.solutions.com", "paxian.pi@gmail.com"),
