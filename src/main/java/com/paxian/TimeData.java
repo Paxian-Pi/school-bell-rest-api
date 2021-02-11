@@ -11,8 +11,7 @@ public class TimeData {
     private String time;
     private String location;
 
-    public TimeData(String id, String time, String location) {
-        this.id = id;
+    public TimeData(String time, String location) {
         this.time = time;
         this.location = location;
     }
